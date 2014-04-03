@@ -11,6 +11,7 @@
 
 <%= image_tag(@image.url, width: 200) %>
 <p><%= @image.description %></p>
+<p>Tags: <%= raw @image.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
 <p>Added by: <%= link_to @image.user.email, @image.user %></p>
 <p>Added on: <%= @image.created_at.to_date %></p>
 
@@ -32,6 +33,7 @@
 <% else %>
   <%= link_to "Sign in", sign_in_path %> to comment
 <% end %>
+
 
 <%= render @comments %>
 <%= paginate @comments %>

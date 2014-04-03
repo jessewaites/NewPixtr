@@ -1,0 +1,9 @@
+<h2>Images</h2>
+
+
+  <% @images.each do |image| %>
+    <%= link_to image_tag(image.url, width: 200), image %>
+    <p><%= image.description %></p>
+  <% end %>
+
+

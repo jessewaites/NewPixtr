@@ -12,6 +12,10 @@
   <div>
     <%= form.text_field :url, placeholder: "URL" %>
   </div>
+  <div class="field">
+  <%= form.label :tag_list, "Tags (separated by commas)" %><br />
+  <%= form.text_field :tag_list %>
+  </div>
   <div>
     <%= form.submit "Create image" %>
   </div>

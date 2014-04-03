@@ -41,12 +41,21 @@ class ImagesController < ApplicationController
     redirect_to image.gallery
   end
 
+  def index
+    if params[:tag]
+      @images = Image.tagged_with(params[:tag])
+    else
+      @images = Image.all
+    end
+  end
+
   private
 
   def image_params
     params.require(:image).permit(
       :name,
       :url,
+      :tag_list,
       :description,
       group_ids: []
     )

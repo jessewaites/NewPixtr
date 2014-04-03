@@ -1,7 +1,11 @@
 Pixtr::Application.routes.draw do
   get "/galleries/random" => "random_galleries#show"
+  get 'tags/:tag', to: 'images#index', as: :tag
 
   root "homes#show"
+
+  get '/search', to: 'searches#index'
+
   resource :dashboard, only: [:show]
 
   resources :galleries do

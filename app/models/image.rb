@@ -11,6 +11,8 @@ class Image < ActiveRecord::Base
   validates :description, presence: true
   validates :url, presence: true
 
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+  
   def user
     gallery.user
   end
