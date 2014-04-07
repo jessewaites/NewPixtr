@@ -4,7 +4,7 @@ Pixtr::Application.routes.draw do
 
   root "homes#show"
 
-  get '/search', to: 'searches#index'
+  get '/search', to: 'searches#show'
 
   resource :dashboard, only: [:show]
 
@@ -28,6 +28,10 @@ Pixtr::Application.routes.draw do
       delete "unlike" => "image_likes#destroy"
     end
   end
+
+  resources :charges, only: [:create]
+
+  resources :accounts, only: [:show]
 
   resources :users, only: [:show] do
     member do

@@ -71,6 +71,10 @@ class User < ActiveRecord::Base
     group_ids.include? group.id
   end
 
+  def upgraded?
+    stripe_id.present?
+  end
+
   def notify_followers(subject, target, type)
     followers.each do |follower|
       follower.activities.create(

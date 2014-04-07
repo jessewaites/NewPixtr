@@ -16,4 +16,5 @@ class Image < ActiveRecord::Base
   def user
     gallery.user
   end
+
 end

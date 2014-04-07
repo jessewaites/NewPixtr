@@ -12,6 +12,9 @@ gem 'clearance'
 gem 'kaminari'
 gem 'delayed_job_active_record'
 gem 'acts-as-taggable-on'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'dotenv-rails'
+
 
 group :development do
   gem 'pry-rails'
